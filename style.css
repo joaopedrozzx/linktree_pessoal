@@ -1,0 +1,145 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: white;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.sobrenome {
+    color: #adff2f;
+}
+
+.container {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    max-width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transform: translateY(-10px);
+    opacity: 0;
+    animation: fadeInUp 1s forwards 0.5s;
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #adff2f;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: white;
+}
+
+p {
+    font-size: 1rem;
+    color: #bbb;
+    margin-bottom: 20px;
+}
+
+.link, .contato {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 15px 0;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: #121212;
+    color: white;
+}
+
+.link:hover, .contato:hover {
+    background-color: #d1d1d170;
+    transform: scale(1.05);
+}
+
+.link img, .contato img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.link:hover img, .contato:hover img {
+    transform: scale(1.2);
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.scroll-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .profile {
+        width: 100px;
+        height: 100px;
+    }
+
+    .link, .contato {
+        padding: 8px;
+    }
+
+    .link img, .contato img {
+        width: 25px;
+        height: 25px;
+    }
+}
